@@ -33,9 +33,5 @@ function threeSum(nums, target) {
   return closestSum;
 }
 
-// Test the function with the given example
-const nums = [-1, 2, 1, -4];
-const target = 1;
-const result = threeSum(nums, target);
-console.log(result); // Output: 2
+// Test the function with the given examp
 
