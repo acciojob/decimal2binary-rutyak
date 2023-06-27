@@ -1,37 +1,29 @@
-function threeSum(nums, target) {
-  // Sort the array in ascending order
-  nums.sort((a, b) => a - b);
-
-  let closestSum = nums[0] + nums[1] + nums[2];
-
-  for (let i = 0; i < nums.length - 2; i++) {
-    let left = i + 1;
-    let right = nums.length - 1;
-
-    while (left < right) {
-      const sum = nums[i] + nums[left] + nums[right];
-
-      // Update closestSum if the current sum is closer to the target
-      if (Math.abs(sum - target) < Math.abs(closestSum - target)) {
-        closestSum = sum;
-      }
-
-      if (sum === target) {
-        // Found an exact match, return the target sum
-        return closestSum;
-      } else if (sum < target) {
-        // The sum is smaller than the target, move the left pointer
-        left++;
-      } else {
-        // The sum is larger than the target, move the right pointer
-        right--;
-      }
-    }
+function decimalToBinary(decimal) {
+  // Check if the input is a valid positive integer
+  if (!Number.isInteger(decimal) || decimal < 0) {
+    console.log('Input must be a positive integer.');
+    return;
   }
 
-  // Return the closest sum found
-  return closestSum;
+  // Base case: decimal number is 0
+  if (decimal === 0) {
+    return '0';
+  }
+
+  let binary = '';
+
+  // Convert decimal to binary using repeated division by 2
+  while (decimal > 0) {
+    binary = (decimal % 2) + binary;
+    decimal = Math.floor(decimal / 2);
+  }
+
+  return binary;
 }
 
-// Test the function with the given examp
+// Test case
+const decimal = 7;
+const binary = decimalToBinary(decimal);
+console.log(binary); // Output: 111
+
 
