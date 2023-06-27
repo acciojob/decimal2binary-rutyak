@@ -22,7 +22,8 @@ function decimalToBinary(decimal) {
 }
 
 // Test case
-const decimal = 7;
+let a = prompt();
+const decimal = a.parseInt();
 const binary = decimalToBinary(decimal);
 console.log(binary); // Output: 111
 
